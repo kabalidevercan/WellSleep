@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-       
-            Section{
-                List{
+      
+            ZStack{
+                
+                Form{
                     Text("When do you want to wake up?")
                     Text("08.00")
                     Spacer()
@@ -24,20 +25,20 @@ struct ContentView: View {
                     
                 }
                 .padding()
-                .background(.linearGradient(colors: [.red.opacity(0.8),.black,.blue], startPoint: .center, endPoint: .bottom),in:RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .background(Color.green)
+                .scrollContentBackground(.hidden)
                 
-                .navigationTitle("Se")
                 
-            }header: {
-                Text("WellSleep")
-                    .font(.headline)
             }
-            .padding()
        
+        
             
            
         
     }
+    
+  
+    
 }
 
 #Preview {
