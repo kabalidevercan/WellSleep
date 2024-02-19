@@ -66,11 +66,11 @@ struct StepperView: View {
  */
 
 struct LinearGradientMoving:View{
-    let colors:[Color] = [.red.opacity(0.6),.black,.blue.opacity(0.5)]
+    let colors:[Color] = [.red.opacity(0.6),.blue.opacity(0.5),.blue.opacity(0.5)]
     let availablePoints = [UnitPoint.top,.topLeading,.topTrailing,.bottom,.bottomLeading,.bottomTrailing,.center]
     
-    @State private var currentPoints = [UnitPoint.topTrailing,.bottom]
-    var timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
+    @State private var currentPoints = [UnitPoint.top,.bottom]
+    var timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     
     var body: some View{
         LinearGradient(stops: [.init(color: colors[0], location: 0.1),.init(color: colors[1], location: 0.9),.init(color: colors[2], location: 0.1)], startPoint: currentPoints[0], endPoint: currentPoints[1])
@@ -162,11 +162,12 @@ struct ContentView: View {
                                   Button{
                                       
                                   }label: {
-                                      Text("Calculate")
-                                          .font(.headline)
-                                          .foregroundStyle(.black)
-                                          .padding()
+                                     Image(systemName: "moon.circle")
+                                          .imageScale(.large)
                                   }
+                                  .padding()
+                                  .frame(width: 50 ,height: 50)
+                                  .background(.thinMaterial)
                         
                                   
                 }
