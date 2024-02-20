@@ -12,6 +12,10 @@
 		1115BB0A2B823C01002647A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1115BB092B823C01002647A4 /* Assets.xcassets */; };
 		1115BB0D2B823C01002647A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1115BB0C2B823C01002647A4 /* Preview Assets.xcassets */; };
 		1125B6002B83279300664ED9 /* moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1125B5FF2B83279300664ED9 /* moon.png */; };
+		119EE7E32B850613003573F7 /* resultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119EE7E22B850613003573F7 /* resultView.swift */; };
+		119EE7E52B85063F003573F7 /* LinearGradientMovingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119EE7E42B85063F003573F7 /* LinearGradientMovingView.swift */; };
+		119EE7E72B850858003573F7 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 119EE7E62B850858003573F7 /* SleepCalculator.mlmodel */; };
+		119EE7E92B85094E003573F7 /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119EE7E82B85094E003573F7 /* StepperView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		1115BB092B823C01002647A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1115BB0C2B823C01002647A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1125B5FF2B83279300664ED9 /* moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moon.png; sourceTree = "<group>"; };
+		119EE7E22B850613003573F7 /* resultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultView.swift; sourceTree = "<group>"; };
+		119EE7E42B85063F003573F7 /* LinearGradientMovingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradientMovingView.swift; sourceTree = "<group>"; };
+		119EE7E62B850858003573F7 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
+		119EE7E82B85094E003573F7 /* StepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +62,12 @@
 			isa = PBXGroup;
 			children = (
 				1125B5FF2B83279300664ED9 /* moon.png */,
-				1115BB052B823BFF002647A4 /* WellSleepApp.swift */,
+				119EE7E62B850858003573F7 /* SleepCalculator.mlmodel */,
+				119EE7E82B85094E003573F7 /* StepperView.swift */,
+				119EE7E42B85063F003573F7 /* LinearGradientMovingView.swift */,
+				119EE7E22B850613003573F7 /* resultView.swift */,
 				1115BB072B823BFF002647A4 /* ContentView.swift */,
+				1115BB052B823BFF002647A4 /* WellSleepApp.swift */,
 				1115BB092B823C01002647A4 /* Assets.xcassets */,
 				1115BB0B2B823C01002647A4 /* Preview Content */,
 			);
@@ -141,7 +153,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119EE7E32B850613003573F7 /* resultView.swift in Sources */,
+				119EE7E72B850858003573F7 /* SleepCalculator.mlmodel in Sources */,
+				119EE7E52B85063F003573F7 /* LinearGradientMovingView.swift in Sources */,
 				1115BB082B823BFF002647A4 /* ContentView.swift in Sources */,
+				119EE7E92B85094E003573F7 /* StepperView.swift in Sources */,
 				1115BB062B823BFF002647A4 /* WellSleepApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

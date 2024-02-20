@@ -8,81 +8,8 @@
 import SwiftUI
 import CoreML
 
-struct StepperView: View {
-    @State private var value = 1
-    
-    @State private var cup = "Cup"
-    
-    func incrementStep() {
-        value += 1
-        cup = value <= 1 ? "Cup" : "Cups"
-    }
 
 
-    func decrementStep() {
-        value -= 1
-        if value < 1 {
-            value = 1
-        }
-        cup = value <= 1 ? "Cup" : "Cups"
-    }
-
-
-    var body: some View {
-        Stepper {
-            Text("\(value) \(cup)")
-        } onIncrement: {
-           
-            incrementStep()
-        } onDecrement: {
-            
-            decrementStep()
-        }
-        .padding(5)
-        
-    }
-}
-
-
-/*
- struct LinearGradientExample: View {
-     
-     let colors: [Color] = [.purple, .blue, .cyan, .teal]
-     let availablePoints = [UnitPoint.top, .topLeading, .topTrailing, .bottom, .bottomLeading, .bottomTrailing, .center, .leading, .trailing]
-     
-     @State private var currentPoints = [UnitPoint.top, .bottom]
-     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-     
-     var body: some View {
-         LinearGradient(colors: colors, startPoint: currentPoints[0], endPoint: currentPoints[1])
-             .animation(.easeInOut(duration: 2), value: currentPoints)
-             .onReceive(timer, perform: { _ in
-                 currentPoints = [availablePoints.randomElement()!, availablePoints.randomElement()!]
-             })
-             .ignoresSafeArea()
-     }
- }
- 
- */
-
-struct LinearGradientMoving:View{
-    let colors:[Color] = [.red.opacity(0.6),.blue.opacity(0.5),.blue.opacity(0.5)]
-    let availablePoints = [UnitPoint.top,.topLeading,.topTrailing,.bottom,.bottomLeading,.bottomTrailing,.center]
-    
-    @State private var currentPoints = [UnitPoint.top,.bottom]
-    var timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
-    
-    var body: some View{
-        LinearGradient(stops: [.init(color: colors[0], location: 0.1),.init(color: colors[1], location: 0.9),.init(color: colors[2], location: 0.1)], startPoint: currentPoints[0], endPoint: currentPoints[1])
-        //LinearGradient(colors: colors, startPoint: currentPoints[0], endPoint: currentPoints[1])
-            .animation(.easeIn(duration: 3), value: currentPoints)
-            .onReceive(timer, perform: { _ in
-                currentPoints = [availablePoints.randomElement()!,availablePoints.randomElement()!]
-            })
-            .ignoresSafeArea()
-    }
-    
-}
 
 struct ContentView: View {
     
@@ -98,6 +25,32 @@ struct ContentView: View {
         components.minute = 0
         return Calendar.current.date(from: components) ?? .now
     }
+    
+    
+    func calculateBedtime(){
+        do{
+            let config = MLModelConfiguration()
+            let model = try SleepCalculator(configuration: config)
+            let components = Calendar.current.dateComponents([.hour,.minute], from: wakeUp)
+            let hour = (components.hour ?? 0) * 60 * 60
+            let minute = (components.minute ?? 0) * 60
+            let prediction = try model.prediction(coffee: Int64(Double(coffeeAmount)), estimatedSleep: sleepAmount, wake: Int64(Double(hour + minute)))
+            let sleepTime = wakeUp - prediction.actualSleep
+            alertTitle = "Your ideal bedtime is..."
+            alertMessage = sleepTime.formatted(date: .omitted, time: .shortened )
+            //more code here
+        }catch{
+            
+            alertTitle = "Error!!!"
+            alertMessage = "Sorry,there was a problem calculating your bedtime"
+            
+            //something went wrong!
+        }
+        
+        
+        showingSheet = true
+    }
+    
     
     
     var body: some View {
@@ -162,11 +115,15 @@ struct ContentView: View {
                                       }
                                       .padding()
                                   }
+                                  .sheet(isPresented: $showingSheet, content: {
+                                      resultView(alertTitle: alertTitle,alertMessage: alertMessage)
+                                  })
                                   .padding()
                                   .scrollContentBackground(.hidden)
                                   .opacity(0.8)
                     Spacer()
                                   Button{
+                                      calculateBedtime()
                                       
                                   }label: {
                                      Image(systemName: "moon.circle")
@@ -182,17 +139,9 @@ struct ContentView: View {
                 .foregroundColor(.pink.opacity(0.9))
                 .padding()
                 .ignoresSafeArea()
-                
                 //
         }
-        
-            
-           
-        
     }
-    
-  
-    
 }
 
 #Preview {
