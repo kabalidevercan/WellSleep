@@ -122,6 +122,7 @@ struct ContentView: View {
                     Spacer()
                     Spacer()
                     Spacer()
+                    
                     Text("WellSleep")
                         .font(.largeTitle)
                         .fontWeight(.bold)
@@ -132,6 +133,8 @@ struct ContentView: View {
                                               .font(.headline)
                                           
                                           DatePicker("Select Time",selection: $wakeUp,displayedComponents: .hourAndMinute)
+                                              .foregroundStyle(.gray)
+                                              .fontWeight(.bold)
                                           
                                       }header: {
                                       }
@@ -142,6 +145,8 @@ struct ContentView: View {
                                               .font(.headline)
                                               
                                           Stepper("\(sleepAmount.formatted()) hours",value: $sleepAmount,in:4...12,step: 0.25)
+                                              .foregroundStyle(.gray)
+                                              .fontWeight(.bold)
                                       }header: {
                                       }
                                       .padding()
@@ -150,6 +155,8 @@ struct ContentView: View {
                                           Text("Daile Coffee Intake")
                                               .font(.headline)
                                          StepperView()
+                                              .foregroundStyle(.gray)
+                                              .fontWeight(.bold)
                                       }header: {
                                         
                                       }
@@ -166,11 +173,13 @@ struct ContentView: View {
                                           .imageScale(.large)
                                   }
                                   .padding()
-                                  .frame(width: 50 ,height: 50)
-                                  .background(.thinMaterial)
-                        
+                                  .frame(width: 150,height: 50)
+                                  .background(.thickMaterial.opacity(0.9))
+                                  .cornerRadius(4)
+                        Spacer()
                                   
                 }
+                .foregroundColor(.pink.opacity(0.9))
                 .padding()
                 .ignoresSafeArea()
                 
