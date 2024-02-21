@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct resultView: View {
-    
     @State  var alertTitle:String
     @State  var alertMessage:String
     @Environment(\.dismiss) var dismiss
+    @State private var  dragSize = CGSize.zero
     
    
     
@@ -28,25 +28,29 @@ struct resultView: View {
                     ZStack(alignment:.center){
                         RoundedRectangle(cornerRadius: 20)
                             .frame(width: 200,height: 200)
+                            .transition(.asymmetric(insertion: .scale, removal: .opacity))
                         Text("\(alertMessage)")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundStyle(.white)
-                        
                     }
                 
-                HStack(){
+                HStack(spacing:20){
                     Text("Sleep Tight")
                         .font(.title)
                         .fontWeight(.heavy)
                         .foregroundStyle(.white)
-                    Image(systemName: "face.smiling")
-                        .foregroundStyle(.white)
-                        .font(.title)
+                    VStack(alignment:.leading){
+                        Image("zzz")
+                            .resizable()
+                            .frame(width: 32,height:32)
+                        Text("hidden")
+                            .hidden()
+                        
+                    }
                 }
-                
                 VStack(spacing:20){
-                    Text("h")
+                    Text("Hidden")
                         .hidden()
                     Button{
                        dismiss()
@@ -59,8 +63,11 @@ struct resultView: View {
                             
                     }
                 }
+                
+              /// VSTACK SON
             }
-            
+        
+            //ZSTACK SON
         }
     }
 }
@@ -68,3 +75,10 @@ struct resultView: View {
 #Preview {
     resultView(alertTitle: "Error", alertMessage: "Nil Time")
 }
+
+
+
+
+
+
+
