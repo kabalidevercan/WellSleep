@@ -40,14 +40,14 @@ struct resultView: View {
                         .font(.title)
                         .fontWeight(.heavy)
                         .foregroundStyle(.white)
-                    VStack(alignment:.leading){
-                        Image("zzz")
-                            .resizable()
-                            .frame(width: 32,height:32)
-                        Text("hidden")
-                            .hidden()
-                        
-                    }
+                }
+                VStack(alignment:.leading){
+                    Image("zzz")
+                        .resizable()
+                        .frame(width: 32,height:32)
+                    Text("hidden")
+                        .hidden()
+                    
                 }
                 VStack(spacing:20){
                     Text("Hidden")
