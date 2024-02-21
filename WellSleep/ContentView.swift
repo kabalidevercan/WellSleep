@@ -58,7 +58,6 @@ struct ContentView: View {
         
             ZStack{
                LinearGradientMoving()
-                //LinearGradient(stops: [.init(color: .red, location: 0.5),.init(color: .black, location:  0.6)], startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
                 ///
                 Image("moon")
@@ -136,7 +135,7 @@ struct ContentView: View {
                         Spacer()
                                   
                 }
-                .foregroundColor(.pink.opacity(0.9))
+                .foregroundColor(.pink.opacity(0.7))
                 .padding()
                 .ignoresSafeArea()
                 //
