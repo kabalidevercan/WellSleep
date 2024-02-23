@@ -3,4 +3,130 @@
    uuid = "E7F5D0B8-E5F0-4E59-959A-2D22403EA44F"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "18F5684A-FFAE-41DF-A839-481331EA0D79"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WellSleep/resultView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "resultView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "18F5684A-FFAE-41DF-A839-481331EA0D79 - e9de32914e3c16c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of WellSleep.resultView.alertMessage : Swift.String"
+                  moduleName = "WellSleep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kabaliercan/Desktop/WellSleep/WellSleep/resultView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "18F5684A-FFAE-41DF-A839-481331EA0D79 - ecbc7d39904c162a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WellSleep.resultView.alertMessage.getter : Swift.String"
+                  moduleName = "WellSleep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kabaliercan/Desktop/WellSleep/WellSleep/resultView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "18F5684A-FFAE-41DF-A839-481331EA0D79 - 46af459011232492"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WellSleep.resultView.alertMessage.setter : Swift.String"
+                  moduleName = "WellSleep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kabaliercan/Desktop/WellSleep/WellSleep/resultView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "18F5684A-FFAE-41DF-A839-481331EA0D79 - 9b3c1e7aebdb48a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WellSleep.resultView.alertMessage.modify : Swift.String"
+                  moduleName = "WellSleep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kabaliercan/Desktop/WellSleep/WellSleep/resultView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "18F5684A-FFAE-41DF-A839-481331EA0D79 - e79d4dc81dbac2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WellSleep.resultView.alertMessage.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "WellSleep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kabaliercan/Desktop/WellSleep/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "18F5684A-FFAE-41DF-A839-481331EA0D79 - daf5247a3f5a13da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WellSleep.resultView.$alertMessage.getter : SwiftUI.Binding&lt;Swift.String&gt;"
+                  moduleName = "WellSleep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kabaliercan/Desktop/WellSleep/WellSleep/resultView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1CCBB5C-81D2-410E-97BC-43C32BCAC024"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WellSleep/resultView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

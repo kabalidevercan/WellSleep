@@ -19,6 +19,8 @@ struct ContentView: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingSheet = false
+   
+    
     static var defaultWakeTime:Date{
         var components = DateComponents()
         components.hour = 7
@@ -27,38 +29,7 @@ struct ContentView: View {
     }
     
     
-    func calculateBedtime(){
-        do{
-            let config = MLModelConfiguration()
-            let model = try SleepCalculator(configuration: config)
-            let components = Calendar.current.dateComponents([.hour,.minute], from: wakeUp)
-            let hour = (components.hour ?? 0) * 60 * 60
-            let minute = (components.minute ?? 0) * 60
-            let prediction = try model.prediction(coffee: Int64(Double(coffeeAmount)), estimatedSleep: sleepAmount, wake: Int64(Double(hour + minute)))
-            let sleepTime = wakeUp - prediction.actualSleep
-            alertTitle = "Your ideal bedtime is..."
-            alertMessage = sleepTime.formatted(date: .omitted, time: .shortened )
-            //more code here
-        }catch{
-            
-            alertTitle = "Error!!!"
-            alertMessage = "Sorry,there was a problem calculating your bedtime"
-            
-            //something went wrong!
-        }
-        
-        
-        showingSheet = true
-    }
-    
-    
-    
-    
-    
-    
     var body: some View {
-        
-        
             ZStack{
                LinearGradientMoving()
                     .ignoresSafeArea()
@@ -118,6 +89,7 @@ struct ContentView: View {
                                       .padding()
                                   }
                                   .sheet(isPresented: $showingSheet, content: {
+                                    
                                       resultView(alertTitle: alertTitle,alertMessage: alertMessage)
                                   })
                                   .padding()
@@ -141,9 +113,42 @@ struct ContentView: View {
                 .foregroundColor(.pink.opacity(0.7))
                 .padding()
                 .ignoresSafeArea()
+                .frame(maxWidth: .infinity)
+                
                 //
         }
     }
+    
+    
+    func calculateBedtime(){
+        do{
+            let config = MLModelConfiguration()
+            let model = try SleepCalculator(configuration: config)
+            let components = Calendar.current.dateComponents([.hour,.minute], from: wakeUp)
+            let hour = (components.hour ?? 0) * 60 * 60
+            let minute = (components.minute ?? 0) * 60
+            let prediction = try model.prediction(coffee: Int64(Double(coffeeAmount)), estimatedSleep: sleepAmount, wake: Int64(Double(hour + minute)))
+            let sleepTime = wakeUp - prediction.actualSleep
+            alertTitle = "Your ideal bedtime is..."
+            alertMessage = sleepTime.formatted(date: .omitted, time: .shortened )
+            //more code here
+        }catch{
+            
+            alertTitle = "Error!!!"
+            alertMessage = "Sorry,there was a problem calculating your bedtime"
+            
+            //something went wrong!
+        }
+        
+        sleepAmount = 0
+        coffeeAmount = 0
+        
+        
+   
+        showingSheet = true
+        
+    }
+    
 }
 
 #Preview {

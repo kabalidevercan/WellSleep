@@ -9,10 +9,11 @@ import SwiftUI
 
 struct resultView: View {
     @State  var alertTitle:String
-    @State  var alertMessage:String
+    //@State  var alertMessage:String
     @Environment(\.dismiss) var dismiss
     @State private var  dragSize = CGSize.zero
-    
+    var alertMessage = GonderilecekDeger.gonderilenDeger
+    var gelenMesa = GonderilecekDeger.gonderilenDeger
    
     
     var body: some View {
@@ -77,7 +78,9 @@ struct resultView: View {
 }
 
 
-
+class GonderilecekDeger{
+    static var gonderilenDeger = "Error"
+}
 
 
 
